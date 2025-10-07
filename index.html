@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zihao Yu 于子皓 | Personal Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="intro">
+      <div class="intro-content">
+        <div class="profile-container">
+          <img src="profile.png" alt="Zihao Yu 于子皓" class="profile-image" />
+        </div>
+        <div class="intro-text">
+          <h1>Zihao Yu 于子皓</h1>
+          <p>
+            M.S. in Computer Science @ Washington University in St. Louis<br />
+            Research: Embodied AI, Large Language Models, Robotics
+          </p>
+          <div class="links">
+            <a href="mailto:yu.zihao@wustl.edu">📧 Email</a>
+            <a href="https://scholar.google.com/citations?user=4bStKAcAAAAJ&hl" target="_blank" rel="noopener noreferrer">📚 Scholar</a>
+            <a href="https://github.com/yuzihaowashu" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+            <a href="https://www.linkedin.com/in/zihao-yu-4325b930b/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+            <a href="files/Yu_Zihao_CV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research">
+        <p>
+            I am a master's student at Washington University in St. Louis pursuing a Master of Science in Computer Science. This summer, I completed my first internship at Tencent Robotics X Lab. During my undergraduate studies at WashU, I was fortunate to conduct research in the WashU NLP Group, advised by <a href="https://cgraywang.github.io" target="_blank" rel="noopener noreferrer">Prof. Chenguang Wang</a>.
+        </p>
+        <p>
+            Goal: Developing embodied agents that can perceive and interact with the physical world to assist people in need.
+        </p>
+        <p>
+          My work spans several key areas: <strong>Embodied AI</strong> for systems that can perceive, reason, and act in physical environments; 
+          <strong>Robotics</strong> including human-robot interaction, manipulation, and autonomous navigation; 
+          <strong>Natural Language Processing</strong> for language understanding, generation, and multimodal learning; 
+          and <strong>Human-AI Collaboration</strong> to create systems that can work effectively with humans.
+        </p>
+        <div class="expandable-section">
+          <button class="expand-button" onclick="toggleAbout()">
+            <span class="expand-icon">▼</span> About myself
+          </button>
+          <div class="expandable-content" id="about-content">
+            <p>
+              I come from Shijiazhuang, Hebei, China, and came to the U.S. for college. I began my undergraduate studies in 2020 and received my B.A. in Physics from Grinnell College in 2023, where I was fortunate to be advised by <a href="https://www.grinnell.edu/user/hasegawa" target="_blank" rel="noopener noreferrer">Prof. Keisuke Hasegawa</a>, mentored by <a href="https://www.grinnell.edu/user/cunningh" target="_blank" rel="noopener noreferrer">Prof. Charles Cunningham</a>, and inspired by every professor I learned from at Grinnell. In Spring 2023, when ChatGPT-3.5 was released, I became fascinated by AI and was accepted into the WashU Dual Degree Program to continue my undergraduate education in Engineering.
+            </p>
+            <p>
+              At WashU, I studied classical engineering fundamentals while also exploring the frontiers of artificial intelligence. I earned my second and third undergraduate degrees in Computer Engineering and Electrical Engineering (with a minor in Robotics). I was fortunate to be advised by <a href="https://engineering.washu.edu/faculty/Roger-Chamberlain.html" target="_blank" rel="noopener noreferrer">Prof. Roger Chamberlain</a> and mentored by <a href="https://engineering.washu.edu/faculty/Jason-Trobaugh.html" target="_blank" rel="noopener noreferrer">Prof. Jason Trobaugh</a>. I am now spending one more year at WashU to pursue the M.S. in Computer Science program.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+    <section class="news">
+      <h2>News</h2>
+      <ul>
+        <li><strong>July 2025</strong> – TAIROS platform officially released by Tencent Robotics X Team!</li>
+        <li><strong>July 2025</strong> – Start my first internship in Tencent Robotics X Lab at Shenzhen, China!</li>
+        <li><strong>May 2025</strong> – MLAN accepted to KnowFM @ ACL 2025 🎉</li>
+        <li><strong>May 2025</strong> – COSMIC accepted to ACL 2025 🎉</li>
+        <li><strong>May 2024</strong> – Accepted in WashU CSE REU Program and start exciting research at WashU NLP Group </li>
+      </ul>
+    </section>
+
+    <section class="publications">
+      <h2>Publications</h2>
+      <div class="pub">
+        <p><strong>TAIROS: An Embodied AI Platform for Robotics Applications</strong><br />
+        Tencent Robotics X Team & Futian Laboratory<br />
+        <em>2025</em><br />
+        <a href="https://tairos.tencent.com" target="_blank" rel="noopener noreferrer">Project</a> | <a href="https://cdn.tairos.tencent-cloud.com/downloads/tools/pdf/tairos.pdf" target="_blank" rel="noopener noreferrer">PDF</a></p>
+      </div>
+      <div class="pub">
+        <p><strong>COSMIC: Generalized Refusal Direction Identification in LLM Activations</strong><br />
+        Vincent Siu, Nicholas Crispino, <strong>Zihao Yu</strong>, Sam Pan, Zhun Wang, Yang Liu, Dawn Song, Chenguang Wang<br />
+        <em>The Annual Meeting of the Association for Computational Linguistics (ACL 2025)</em><br />
+        <a href="https://arxiv.org/abs/2506.00085" target="_blank" rel="noopener noreferrer">PDF</a> | <a href="https://github.com/wang-research-lab/COSMIC" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </div>
+      <div class="pub">
+        <p><strong>MLAN: Language-Based Instruction Tuning Improves Zero-Shot Generalization of Multimodal Large Language Models</strong><br />
+        Jianhong Tu*, Zhuohao Ni*, Nicholas Crispino, <strong>Zihao Yu</strong>, Michael Bendersky, Beliz Gunel, Ruoxi Jia, Xin Liu, Lingjuan Lyu, Dawn Song, Chenguang Wang<br />
+        <em>KnowFM @ ACL 2025</em><br />
+        <a href="https://arxiv.org/abs/2411.10557" target="_blank" rel="noopener noreferrer">PDF</a> | <a href="https://github.com/wang-research-lab/mlan" target="_blank" rel="noopener noreferrer">Code</a> | <a href="https://huggingface.co/datasets/WangResearchLab/MLAN/tree/main" target="_blank" rel="noopener noreferrer">Data</a> | <a href="https://huggingface.co/collections/WangResearchLab/mlan-673be70728a904fca2c2a661" target="_blank" rel="noopener noreferrer">HuggingFace</a></p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script>
+    function toggleAbout() {
+      const content = document.getElementById('about-content');
+      const icon = document.querySelector('.expand-icon');
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.textContent = '▲';
+      } else {
+        content.style.display = 'none';
+        icon.textContent = '▼';
+      }
+    }
+
+    // Cloud background opacity based on scroll
+    function updateCloudOpacity() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercent = scrollTop / (documentHeight - windowHeight);
+      
+      // Calculate opacity: starts at 0.3, decreases to 0 as user scrolls
+      const opacity = Math.max(0, 0.3 - (scrollPercent * 0.3));
+      
+      // Apply opacity to the cloud background
+      const cloudBackground = document.querySelector('body::before');
+      if (cloudBackground) {
+        cloudBackground.style.opacity = opacity;
+      } else {
+        // Fallback: create a style element to control the pseudo-element
+        let styleElement = document.getElementById('cloud-opacity-style');
+        if (!styleElement) {
+          styleElement = document.createElement('style');
+          styleElement.id = 'cloud-opacity-style';
+          document.head.appendChild(styleElement);
+        }
+        styleElement.textContent = `body::before { opacity: ${opacity} !important; }`;
+      }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateCloudOpacity);
+    
+    // Initialize opacity on page load
+    document.addEventListener('DOMContentLoaded', updateCloudOpacity);
+  </script>
+</body>
+</html>
