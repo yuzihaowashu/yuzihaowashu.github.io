@@ -118,7 +118,7 @@
           <span class="sep">·</span>
           <a href="files/Yu_Zihao_Undergraduate_Thesis.pdf" target="_blank" rel="noopener noreferrer">Report</a>
           <span class="sep">·</span>
-          <a href="files/Yu_Zihao_Capstone_Poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+          <a href="files/ESE-498 Poster Final Version.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
         </div>
       </div>
 
@@ -165,6 +165,36 @@
         icon.textContent = '▶';
       }
     }
+
+    // Author name → homepage mapping (update URLs as needed)
+    const authorLinks = {
+      "Vincent Siu": "https://vsiu-ucsc.github.io",
+      "Nicholas Crispino": "https://ncrispino.github.io",
+      "Sam Pan": "https://www.linkedin.com/in/sampan135/",
+      "Dawn Song": "https://dawnsong.io",
+      "Chenguang Wang": "https://cgraywang.github.io",
+      "Jianhong Tu": "https://jianhongtu.github.io",
+      "Zhuohao Ni": "https://www.linkedin.com/in/zhuohao-ni-873393225/",
+      "Michael Bendersky": "https://www.linkedin.com/in/bemike/",
+      "Beliz Gunel": "https://www.linkedin.com/in/beliz-gunel-7252bb78/",
+      "Ruoxi Jia": "https://www.linkedin.com/in/ruoxi-jia-354a485a/",
+      "Lingjuan Lyu": "https://www.linkedin.com/in/teresa-lingjuan-lyu-1ba269102/",
+    };
+
+    // Auto-link author names in all .pub-authors elements
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.pub-authors').forEach(function(el) {
+        let html = el.innerHTML;
+        // Sort by name length (longest first) to avoid partial replacements
+        const sortedNames = Object.keys(authorLinks).sort((a, b) => b.length - a.length);
+        sortedNames.forEach(function(name) {
+          const url = authorLinks[name];
+          const regex = new RegExp('(?<![">])(' + name.replace('*', '\\*') + '\\*?)(?![<])', 'g');
+          html = html.replace(regex, '<a href="' + url + '" target="_blank" rel="noopener noreferrer">$1</a>');
+        });
+        el.innerHTML = html;
+      });
+    });
 
   </script>
 
