@@ -508,11 +508,16 @@ a:focus {
 
   .pub {
     flex-direction: column;
+    align-items: center;
   }
 
   .pub-media {
     width: 100%;
     max-width: 280px;
+  }
+
+  .pub-info {
+    width: 100%;
   }
 }
 
