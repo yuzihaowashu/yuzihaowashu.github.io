@@ -156,13 +156,15 @@ a:hover {
 }
 
 .intro-content {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
   gap: 36px;
   text-align: left;
   position: relative;
   z-index: 1;
-  max-width: 90%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 40px;
 }
 
