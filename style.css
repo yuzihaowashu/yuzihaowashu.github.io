@@ -476,14 +476,25 @@ a:focus {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .intro-text {
     text-align: center;
+    width: 100%;
   }
 
   .intro-text h1 {
     text-align: center;
+  }
+
+  .intro-text .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .intro-text .subtitle span[style*="nowrap"] {
+    white-space: normal !important;
   }
 
   .profile-image {
@@ -507,7 +518,11 @@ a:focus {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .intro-text .subtitle {
+    font-size: 0.85rem;
   }
 
   .profile-image {
