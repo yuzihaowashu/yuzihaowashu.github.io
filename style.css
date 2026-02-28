@@ -81,7 +81,7 @@ html {
   z-index: 0;
   pointer-events: none;
   transition: opacity 1.2s ease-in-out;
-  animation: subtleZoom 20s ease-in-out infinite;
+  animation: subtleZoom 99s ease-in-out infinite;
 }
 
 .school-bg.active {
