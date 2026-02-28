@@ -17,6 +17,8 @@
   </nav>
 
   <div class="hero">
+    <div class="school-bg" id="washu-bg"></div>
+    <div class="school-bg" id="grinnell-bg"></div>
     <section class="intro">
       <div class="intro-content">
         <div class="profile-container">
@@ -44,9 +46,9 @@
             
             <span style="white-space:nowrap">BS in Electrical Engineering (Minor in Robotics)</span>  <br />
 
-            <span style="white-space:nowrap"></span> @ <a href="https://wustl.edu" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a> <br />
+            <span style="white-space:nowrap"></span> @ <a href="https://wustl.edu" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a> <button class="bg-toggle-btn" id="washu-btn" onclick="cycleSchoolBg('washu')" title="Cycle WashU seasons">✈️</button> <br />
             <br />
-            BA in Physics @ <a href="https://www.grinnell.edu" target="_blank" rel="noopener noreferrer">Grinnell College</a>
+            BA in Physics @ <a href="https://www.grinnell.edu" target="_blank" rel="noopener noreferrer">Grinnell College</a> <button class="bg-toggle-btn" id="grinnell-btn" onclick="cycleSchoolBg('grinnell')" title="Cycle Grinnell seasons">✈️</button>
           </p>
         </div>
       </div>
@@ -199,6 +201,82 @@
         content.style.display = 'none';
         icon.textContent = '▶';
       }
+    }
+
+    const seasons = ['summer', 'fall', 'winter', 'spring'];
+    const seasonEmojis = { summer: '☀️', fall: '🍂', winter: '❄️', spring: '🌸' };
+    const washuImages = {
+      summer: 'files/WashU_Season/WashU_Summer.jpg',
+      fall: 'files/WashU_Season/WashU_Fall.jpg',
+      winter: 'files/WashU_Season/WashU_Winter.jpg',
+      spring: 'files/WashU_Season/washu_spring.jpg'
+    };
+    const grinnellImages = {
+      summer: 'files/Grinnell_Season/Grinnell_Summer.jpg',
+      fall: 'files/Grinnell_Season/Grinnell_Fall.JPG',
+      winter: 'files/Grinnell_Season/Grinnell_Winter.JPG',
+      spring: 'files/Grinnell_Season/Grinnell_Spring.JPG'
+    };
+
+    // Preload all images so transitions are instant
+    [washuImages, grinnellImages].forEach(function(imgSet) {
+      Object.values(imgSet).forEach(function(src) {
+        var img = new Image();
+        img.src = src;
+      });
+    });
+
+    let washuIndex = -1;
+    let grinnellIndex = -1;
+
+    function cycleSchoolBg(school) {
+      const isWashu = school === 'washu';
+      const bgEl = document.getElementById(isWashu ? 'washu-bg' : 'grinnell-bg');
+      const otherBgEl = document.getElementById(isWashu ? 'grinnell-bg' : 'washu-bg');
+      const images = isWashu ? washuImages : grinnellImages;
+      const btn = document.getElementById(isWashu ? 'washu-btn' : 'grinnell-btn');
+      const otherBtn = document.getElementById(isWashu ? 'grinnell-btn' : 'washu-btn');
+      const hero = document.querySelector('.hero');
+
+      // Deactivate the other school
+      otherBgEl.classList.remove('active');
+      if (isWashu) { grinnellIndex = -1; } else { washuIndex = -1; }
+      otherBtn.textContent = '✈️';
+
+      // Advance season index
+      let idx = isWashu ? washuIndex : grinnellIndex;
+      idx++;
+      if (idx >= seasons.length) {
+        idx = -1;
+        bgEl.classList.remove('active');
+        hero.classList.remove('school-active');
+        btn.textContent = '✈️';
+        if (isWashu) { washuIndex = idx; } else { grinnellIndex = idx; }
+        return;
+      }
+
+      if (isWashu) { washuIndex = idx; } else { grinnellIndex = idx; }
+
+      const season = seasons[idx];
+
+      // If first click, just set image and fade in
+      if (idx === 0) {
+        bgEl.style.backgroundImage = 'url(' + images[season] + ')';
+        bgEl.classList.add('active');
+        hero.classList.add('school-active');
+      } else {
+        // Crossfade: briefly fade out, swap image, fade back in
+        bgEl.style.transition = 'opacity 0.4s ease-out';
+        bgEl.classList.remove('active');
+        setTimeout(function() {
+          bgEl.style.backgroundImage = 'url(' + images[season] + ')';
+          bgEl.style.transition = 'opacity 1.2s ease-in-out';
+          bgEl.classList.add('active');
+          hero.classList.add('school-active');
+        }, 400);
+      }
+
+      btn.textContent = seasonEmojis[season];
     }
 
     // Author name → homepage mapping (update URLs as needed)
